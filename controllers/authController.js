@@ -1,4 +1,4 @@
-export * from "./authcontroller.js";
+export * from "../authController.js";
 
 import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 import userModel from "../models/userModel.js";
