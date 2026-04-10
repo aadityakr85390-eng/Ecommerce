@@ -1,6 +1,6 @@
 import express from "express";
 import { requireAdmin } from "../middlewares/adminMiddleware.js";
-import { requireSignIn } from "../middlewares/authMidderware.js";
+import { requireSignIn } from "../middlewares/authMiddlerware.js";
 import {
   adminOrderStatsController,
   createOrderController,
