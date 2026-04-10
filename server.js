@@ -35,7 +35,7 @@ app.use(
   })
 );
 
-// middlewares
+// middleware
 app.use(express.json());
 app.use(morgan("dev"));
 

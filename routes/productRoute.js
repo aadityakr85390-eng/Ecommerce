@@ -1,5 +1,5 @@
 import express from "express";
-import { requireAdmin } from "../middlewares/adminMiddleware.js";
+import { requireAdmin } from "../middleware/adminMiddleware.js";
 import {
   createProductController,
   deleteProductController,
