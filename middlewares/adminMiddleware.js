@@ -1,4 +1,4 @@
-import { requireSignIn, isAdmin } from "./authMiddlerware.js";
+import { requireSignIn, isAdmin } from "./authMiddleware.js";
 
 export const requireAdmin = [requireSignIn, isAdmin];
 
