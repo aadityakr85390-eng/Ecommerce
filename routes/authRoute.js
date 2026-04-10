@@ -9,7 +9,7 @@ import {
   createAdminController,
 } from "../controllers/authController.js";
 
-import { isAdmin, requireSignIn } from "../middleware/authMiddleware.js"; 
+import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js"; 
 
 import { updateProfileController } from "../controllers/profileController.js";
 

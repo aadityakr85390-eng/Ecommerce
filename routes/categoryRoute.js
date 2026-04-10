@@ -1,6 +1,6 @@
 import express from "express";
 import { createCategoryController, listCategoryController } from "../controllers/categoryController.js";
-import { requireAdmin } from "../middleware/adminMiddleware.js";
+import { requireAdmin } from "../middlewares/adminMiddleware.js";
 
 const router = express.Router();
 
