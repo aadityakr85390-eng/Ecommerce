@@ -1,0 +1,61 @@
+/* =========================
+   REGISTER PAGE STYLE
+========================= */
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  background: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+}
+
+.form-container form {
+  width: 350px; /* 🔥 IMPORTANT */
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column; /* 🔥 vertical layout */
+}
+
+.form-container .title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "playfair display", serif;
+}
+
+/* input fields */
+.form-container input {
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 15px;
+  padding: 8px;
+  outline: none;
+}
+
+/* button */
+.form-container button {
+  border: none;
+  background: #000;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container button {
+  border: none;
+  background: #000;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s; /* 🔥 smooth hover */
+}
+
+.form-container button:hover {
+  border: 1px solid black;
+  background: linear-gradient(to right, #434343, #000000);
+}
