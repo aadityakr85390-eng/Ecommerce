@@ -8,7 +8,9 @@ import {
   resetPasswordController,
   createAdminController,
 } from "../controllers/authController.js";
-import { isAdmin, requireSignIn } from "../middlewares/authMidderware.js";
+
+import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js"; 
+
 import { updateProfileController } from "../controllers/profileController.js";
 
 const router = express.Router();
@@ -19,28 +21,28 @@ router.post("/register", registerController);
 // LOGIN || POST
 router.post("/login", loginController);
 
-//Test Route
-router.get('/test', requireSignIn,isAdmin,testController);
+// TEST ROUTE
+router.get("/test", requireSignIn, isAdmin, testController);
 
-// Protected Route Auth
-router.get('/user-auth', requireSignIn, (req,res) => {
-    res.status(200).send({ok:true});
+// USER AUTH CHECK
+router.get("/user-auth", requireSignIn, (req, res) => {
+  res.status(200).send({ ok: true });
 });
 
-// Profile update
+// PROFILE UPDATE
 router.put("/profile", requireSignIn, updateProfileController);
 
-// Admin route auth
+// ADMIN AUTH CHECK
 router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
   res.status(200).send({ ok: true });
 });
 
-// One-time admin creation (secured by ADMIN_SETUP_TOKEN, body: { email, token })
+// CREATE ADMIN
 router.post("/create-admin", createAdminController);
 
-// Forgot password (demo OTP flow)
+// PASSWORD RESET FLOW
 router.post("/forgot-password", forgotPasswordController);
 router.post("/verify-otp", verifyOtpController);
 router.post("/reset-password", resetPasswordController);
 
-export default router; 
+export default router;
