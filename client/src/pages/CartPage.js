@@ -6,7 +6,8 @@ import { useCart } from "../context/cart";
 import { productPlaceholder } from "../lib/images";
 
 export default function CartPage() {
-  const cart = useCart();
+  // ✅ FIX 1: Reverted to standard assignment to stop the iterable crash
+  const cart = useCart(); 
   const navigate = useNavigate();
   const items = cart?.items || [];
   const subtotal = cart?.subtotal || 0;
@@ -49,10 +50,11 @@ export default function CartPage() {
                     {items.map((it) => (
                       <div
                         className="d-flex flex-wrap align-items-center gap-3"
-                        key={it.id}
+                        key={it._id || it.id}
                       >
                         <img
-                          src={it.image}
+                          // ✅ FIX 2: Pointed the image source to the backend server port 8080
+                          src={it.image?.startsWith("http") ? it.image : `http://localhost:8080${it.image?.startsWith('/') ? '' : '/'}${it.image}`}
                           width="84"
                           height="84"
                           alt={it.name}
@@ -67,7 +69,7 @@ export default function CartPage() {
                         <div className="flex-grow-1">
                           <div className="fw-semibold">{it.name}</div>
                           <div className="text-muted small">
-                            ₹{it.price} • {it.category}
+                            ₹{it.price} • {it.category?.name}
                           </div>
                         </div>
                         <div className="d-flex align-items-center gap-2">
@@ -127,4 +129,3 @@ export default function CartPage() {
     </Layout>
   );
 }
-
